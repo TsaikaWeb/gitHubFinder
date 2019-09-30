@@ -8,7 +8,7 @@ function getObject(){
     const gitHub = new Github;
     console.log(gitHub);
 
-    gitHub.getUser(`ju-voro`)
+    gitHub.getUser(`Sempiternus666`)
     .then(data=>{
         console.log(data);
     })
