@@ -53,8 +53,39 @@ showProfile(user){
                 </div>
             </div>
            ` 
-
+            
+           document.getElementById('repos').innerHTML = output;s
         });
         
+    }
+
+    showAlert(message,className){
+        this.clearAlert();
+
+        //create alert div 
+        const div = document.createElement('div');
+        //add class name
+        div.className = className;
+        //add text
+        div.appendChild(document.createTextNode(message));
+        //insert the div into this parent
+        const container = document.querySelector('.searchContainer');
+        const search = document.querySelector('.search');
+
+        container.insertBefore(div,search);
+
+        setTimeout(()=> {
+            thiss.clearAlert();
+        }, 3000);
+    }
+
+    clearAlert(){
+        const currentAlert = document.querySelector('.alert');
+        if(currentAlert){
+            currentAlert.remove();
+        }
+    }
+    clearProfile(){
+        this.profile.innerHTML = '';
     }
 }
